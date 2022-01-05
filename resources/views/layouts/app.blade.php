@@ -14,6 +14,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
+
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
@@ -31,9 +32,24 @@
 </head>
 
 <body class="font-poppins antialiased">
-    <x-jet-banner />
 
-    <div class="min-h-screen bg-gray-100">
+    {{-- SOCIAL --}}
+    <div class="social_bar fixed right-0 top-20 flex flex-col items-end z-50">
+        <a class="icon-facebook rounded-tl-2xl icon_social" target="_blank" href="https://www.facebook.com/"><i
+                class="fab fa-facebook"></i></a>
+
+        <a class="icon-correo icon_social" target="_blank" href="mailto:camaymesa@gmail.com"><i
+                class="fas fa-envelope"></i></a>
+
+
+        <a class="icon-twitter rounded-bl-2xl icon_social text-2xl" target="_blank"
+            href="https://www.waze.com/es/live-map/directions/guatemala/guatemala/ciudad-de-guatemala/4a-avenida-840?navigate=yes&utm_campaign=waze_website&utm_source=waze_website&utm_medium=lm_share_location&to=place.Ei00QSBBdmVuaWRhIDg0MCwgQ2RhZC4gZGUgR3VhdGVtYWxhLCBHdWF0ZW1hbGEiMRIvChQKEglj2rYf1KOJhRGoKM7kgzTqlRDIBioUChIJJ2f4odajiYUR_0ox_1a5wYc"><i
+                class="fab fa-waze"></i></a>
+    </div>
+    {{-- /SOCIAL --}}
+
+
+    <div class="min-h-screen bg-white">
         @livewire('navigation-menu')
 
         <!-- Page Content -->
@@ -47,7 +63,8 @@
                             href="https://villatoro.dev" target="_blank" class="text-villatoro">Carlos Villatoro</a></p>
 
                     <a class="bg-primary text-white p-3 rounded-lg text-lg md:flex items-center hover:bg-opacity-60 hidden"
-                        href="{{ route('admin') }}"><img src="{{ asset('./img/admin.svg') }}" class="mr-2">
+                        href="{{ route('admin') }}"><img src="{{ asset('./img/admin.svg') }}"
+                            class="mr-2">
                         Administrador</a>
                 </div>
             </footer>

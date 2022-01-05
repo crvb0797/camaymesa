@@ -15,6 +15,7 @@ class PromotionFactory extends Factory
     {
         return [
             'name' => $this->faker->word(20),
+            'link' => $this->faker->url(),
             'user_id' => 1
         ];
     }

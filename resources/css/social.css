@@ -1,0 +1,40 @@
+.icon_social {
+    display: flex;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    padding: 0.75rem;
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+    width: 2.5rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.icon-facebook{
+    background: #2E406E;
+}
+
+.icon-instagram{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.icon-twitter{
+    background: #00acee;
+}
+
+.icon-whatsapp{
+    background: #00bb2d;
+}
+
+.icon-correo{
+    background: #db4a39;
+}
+
+.icon_social:hover{
+    /* hover:pr-12 hover:rounded-tl-2xl hover:rounded-bl-2xl hover:shadow-lg */
+    padding-right: 3rem;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .42);
+}
+/* SOCIAL BAR */

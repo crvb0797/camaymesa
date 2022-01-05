@@ -1223,6 +1223,10 @@ select{
 	top: 0px;
 }
 
+.top-20{
+	top: 5rem;
+}
+
 .z-0{
 	z-index: 0;
 }
@@ -1242,6 +1246,16 @@ select{
 .mx-auto{
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.my-20{
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
+
+.my-4{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 .my-2{
@@ -1341,6 +1355,10 @@ select{
 	margin-bottom: 1rem;
 }
 
+.mt-14{
+	margin-top: 3.5rem;
+}
+
 .-mt-px{
 	margin-top: -1px;
 }
@@ -1409,16 +1427,8 @@ select{
 	height: 5rem;
 }
 
-.h-600{
-	height: 37.5rem;
-}
-
 .h-auto{
 	height: auto;
-}
-
-.h-screen{
-	height: 100vh;
 }
 
 .min-h-screen{
@@ -1583,6 +1593,10 @@ select{
 	flex-wrap: wrap;
 }
 
+.items-end{
+	align-items: flex-end;
+}
+
 .items-center{
 	align-items: center;
 }
@@ -1611,6 +1625,10 @@ select{
 	gap: 0.25rem;
 }
 
+.gap-8{
+	gap: 2rem;
+}
+
 .space-x-8 > :not([hidden]) ~ :not([hidden]){
 	--tw-space-x-reverse: 0;
 	margin-right: calc(2rem * var(--tw-space-x-reverse));
@@ -1627,6 +1645,12 @@ select{
 	--tw-space-y-reverse: 0;
 	margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
 	margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-3 > :not([hidden]) ~ :not([hidden]){
+	--tw-space-y-reverse: 0;
+	margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+	margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
 .overflow-hidden{
@@ -1681,6 +1705,14 @@ select{
 .rounded-b-none{
 	border-bottom-right-radius: 0px;
 	border-bottom-left-radius: 0px;
+}
+
+.rounded-tl-2xl{
+	border-top-left-radius: 1rem;
+}
+
+.rounded-bl-2xl{
+	border-bottom-left-radius: 1rem;
 }
 
 .border{
@@ -1852,6 +1884,10 @@ select{
 
 .p-6{
 	padding: 1.5rem;
+}
+
+.p-8{
+	padding: 2rem;
 }
 
 .p-12{
@@ -2030,6 +2066,16 @@ select{
 	line-height: 1.75rem;
 }
 
+.text-3xl{
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+}
+
+.text-6xl{
+	font-size: 3.75rem;
+	line-height: 1;
+}
+
 .font-medium{
 	font-weight: 500;
 }
@@ -2040,6 +2086,10 @@ select{
 
 .font-bold{
 	font-weight: 700;
+}
+
+.font-extrabold{
+	font-weight: 800;
 }
 
 .uppercase{
@@ -2062,8 +2112,20 @@ select{
 	line-height: 1rem;
 }
 
+.leading-6{
+	line-height: 1.5rem;
+}
+
 .tracking-widest{
 	letter-spacing: 0.1em;
+}
+
+.tracking-wide{
+	letter-spacing: 0.025em;
+}
+
+.tracking-tight{
+	letter-spacing: -0.025em;
 }
 
 .tracking-wider{
@@ -2286,6 +2348,48 @@ select{
 	transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
+.icon_social {
+    display: flex;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    padding: 0.75rem;
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+    width: 2.5rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.icon-facebook{
+    background: #2E406E;
+}
+
+.icon-instagram{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.icon-twitter{
+    background: #00acee;
+}
+
+.icon-whatsapp{
+    background: #00bb2d;
+}
+
+.icon-correo{
+    background: #db4a39;
+}
+
+.icon_social:hover{
+    /* hover:pr-12 hover:rounded-tl-2xl hover:rounded-bl-2xl hover:shadow-lg */
+    padding-right: 3rem;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .42);
+}
+
+/* SOCIAL BAR */
+
 .hover\:border-gray-300:hover{
 	--tw-border-opacity: 1;
 	border-color: rgba(209, 213, 219, var(--tw-border-opacity));
@@ -2329,10 +2433,6 @@ select{
 .hover\:bg-secondary:hover{
 	--tw-bg-opacity: 1;
 	background-color: rgba(95, 79, 67, var(--tw-bg-opacity));
-}
-
-.hover\:bg-opacity-40:hover{
-	--tw-bg-opacity: 0.4;
 }
 
 .hover\:bg-opacity-60:hover{
@@ -2755,6 +2855,10 @@ select{
 
 	.md\:grid{
 		display: grid;
+	}
+
+	.md\:h-600{
+		height: 37.5rem;
 	}
 
 	.md\:grid-cols-3{

@@ -15,6 +15,9 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
                 poppins: ['Poppins'],
             },
+            spacing: {
+                '600': '37.5rem',
+              },
             colors: {
                 'primary': '#923C1F',
                 'secondary': '#5F4F43',
