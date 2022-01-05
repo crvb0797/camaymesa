@@ -13,6 +13,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 
     {{-- Font Awesome --}}
@@ -76,31 +78,11 @@
 
     @livewireScripts
 
+    {{-- SWIPER --}}
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{{ asset('./js/swiper.js') }}"></script>
     {{-- OWL SCRIPTS --}}
     <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $("#owl1").owlCarousel({
-                dots: false,
-                loop: true,
-                /* center: true, */
-                autoplay: true,
-                autoplayTimeout: 10000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    480: {
-                        items: 1,
-                    },
-                    768: {
-                        items: 1,
-                    }
-                },
-            });
-        });
-    </script>
 </body>
 
 </html>

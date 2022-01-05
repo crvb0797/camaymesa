@@ -3,7 +3,7 @@
 
     {{-- BANNER --}}
     <div>
-        <div id="owl1" class="owl-carousel owl-theme overflow-hidden md:h-600">
+        <div id="owl1" class="owl-carousel owl-theme overflow-hidden">
             {{-- @foreach ($promotions as $promotion)
                 <a href="{{ $promotion->link }}" target="_blank">
                     <img class="w-full object-cover object-center" src="{{ Storage::url($promotion->image->url) }}" alt="{{$promotion->name}}">
@@ -17,13 +17,286 @@
     {{-- /BANNER --}}
 
     {{-- PROMOCIONES --}}
-    <section id="promotions">
+    <section id="promotions" class="my-10 container mx-auto relative">
+        <div class="section-title p-2 text-primary mt-8 space-y-3">
+            <h2 class="text-center text-xl">Aprovecha nuestras</h2>
+            <h1 class="text-center text-3xl font-extrabold tracking-wide uppercase">Promociones</h1>
+        </div>
+        {{-- CARROUSEL --}}
+        {{-- <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide rounded-lg overflow-hidden">
+                    <img class="w-full" src="{{ asset('./img/producto.png') }}" />
+                    <div class="px-4 py-2 text-left space-y-4 ">
+                        <h1 class="text-xl text-text font-bold">Producto #1</h1>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Ancho:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Largo:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Alto:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Garantia:</p>3 años por desperfecto
+                        </span>
+
+                        <hr />
+
+                        <div class="flex flex-col md:flex-row space-x-4">
+                            <p class="text-offer line-through">Precio normal Q1850</p>
+                            <span class="text-primary font-bold">Oferta Q1,200</span>
+                        </div>
+
+                        <button class="mt-12 w-full text-center bg-yellow-400 py-2 rounded-lg">Read
+                            more</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide rounded-lg overflow-hidden">
+                    <img class="w-full" src="{{ asset('./img/producto.png') }}" />
+                    <div class="px-4 py-2 text-left space-y-4 ">
+                        <h1 class="text-xl text-text font-bold">Producto #1</h1>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Ancho:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Largo:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Alto:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Garantia:</p>3 años por desperfecto
+                        </span>
+
+                        <hr />
+
+                        <div class="flex flex-col md:flex-row space-x-4">
+                            <p class="text-offer line-through">Precio normal Q1850</p>
+                            <span class="text-primary font-bold">Oferta Q1,200</span>
+                        </div>
+
+                        <button class="mt-12 w-full text-center bg-yellow-400 py-2 rounded-lg">Read
+                            more</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide rounded-lg overflow-hidden">
+                    <img class="w-full" src="{{ asset('./img/producto.png') }}" />
+                    <div class="px-4 py-2 text-left space-y-4 ">
+                        <h1 class="text-xl text-text font-bold">Producto #1</h1>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Ancho:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Largo:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Alto:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Garantia:</p>3 años por desperfecto
+                        </span>
+
+                        <hr />
+
+                        <div class="flex flex-col md:flex-row space-x-4">
+                            <p class="text-offer line-through">Precio normal Q1850</p>
+                            <span class="text-primary font-bold">Oferta Q1,200</span>
+                        </div>
+
+                        <button class="mt-12 w-full text-center bg-yellow-400 py-2 rounded-lg">Read
+                            more</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide rounded-lg overflow-hidden">
+                    <img class="w-full" src="{{ asset('./img/producto.png') }}" />
+                    <div class="px-4 py-2 text-left space-y-4 ">
+                        <h1 class="text-xl text-text font-bold">Producto #1</h1>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Ancho:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Largo:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Alto:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Garantia:</p>3 años por desperfecto
+                        </span>
+
+                        <hr />
+
+                        <div class="flex flex-col md:flex-row space-x-4">
+                            <p class="text-offer line-through">Precio normal Q1850</p>
+                            <span class="text-primary font-bold">Oferta Q1,200</span>
+                        </div>
+
+                        <button class="mt-12 w-full text-center bg-yellow-400 py-2 rounded-lg">Read
+                            more</button>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+        <div style="container mx-auto">
+            <div id="owl2" class="owl-carousel owl-theme">
+                <div class="md:rounded-lg overflow-hidden">
+                    <img class="w-full" src="{{ asset('./img/producto.png') }}" />
+                    <div class="px-4 py-2 text-left space-y-4 ">
+                        <h1 class="text-xl text-text font-bold">Producto #1</h1>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Ancho:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Largo:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Alto:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Garantia:</p>3 años por desperfecto
+                        </span>
+
+                        <hr />
+
+                        <div class="flex flex-col md:flex-row space-x-4">
+                            <p class="text-offer line-through">Precio normal Q1850</p>
+                            <span class="text-primary font-bold">Oferta Q1,200</span>
+                        </div>
+
+                        <button class="mt-12 w-full text-center bg-secondary py-2 rounded-lg text-white"><i
+                                class="fas fa-plus-circle mr-2"></i> Más
+                            información</button>
+                    </div>
+                </div>
+
+                <div class="md:rounded-lg overflow-hidden">
+                    <img class="w-full" src="{{ asset('./img/producto.png') }}" />
+                    <div class="px-4 py-2 text-left space-y-4 ">
+                        <h1 class="text-xl text-text font-bold">Producto #2</h1>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Ancho:</p>120cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Largo:</p>15cm x 80cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Alto:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Garantia:</p>3 años por desperfecto de fabrica
+                        </span>
+
+                        <hr />
+
+                        <div class="flex flex-col md:flex-row space-x-4">
+                            <p class="text-offer line-through">Precio normal Q1850</p>
+                            <span class="text-primary font-bold">Oferta Q1,200</span>
+                        </div>
+
+                        <button class="mt-12 w-full text-center bg-secondary py-2 rounded-lg text-white"><i
+                                class="fas fa-plus-circle mr-2"></i> Más
+                            información</button>
+                    </div>
+                </div>
+
+                <div class="md:rounded-lg overflow-hidden">
+                    <img class="w-full" src="{{ asset('./img/producto.png') }}" />
+                    <div class="px-4 py-2 text-left space-y-4 ">
+                        <h1 class="text-xl text-text font-bold">Producto #3</h1>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Ancho:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Largo:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Alto:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Garantia:</p>3 años por desperfecto
+                        </span>
+
+                        <hr />
+
+                        <div class="flex flex-col md:flex-row space-x-4">
+                            <p class="text-offer line-through">Precio normal Q1850</p>
+                            <span class="text-primary font-bold">Oferta Q1,200</span>
+                        </div>
+
+                        <button class="mt-12 w-full text-center bg-secondary py-2 rounded-lg text-white"><i
+                                class="fas fa-plus-circle mr-2"></i> Más
+                            información</button>
+                    </div>
+                </div>
+
+                <div class="md:rounded-lg overflow-hidden">
+                    <img class="w-full" src="{{ asset('./img/producto.png') }}" />
+                    <div class="px-4 py-2 text-left space-y-4 ">
+                        <h1 class="text-xl text-text font-bold">Producto #4</h1>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Ancho:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Largo:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Alto:</p>15cm x 20cm
+                        </span>
+
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Garantia:</p>3 años por desperfecto
+                        </span>
+
+                        <hr />
+
+                        <div class="flex flex-col md:flex-row space-x-4">
+                            <p class="text-offer line-through">Precio normal Q1850</p>
+                            <span class="text-primary font-bold">Oferta Q1,200</span>
+                        </div>
+
+                        <button class="mt-12 w-full text-center bg-secondary py-2 rounded-lg text-white"><i
+                                class="fas fa-plus-circle mr-2"></i> Más
+                            información</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
 
     </section>
     {{-- PROMOCIONES --}}
 
     {{-- PASOS DE COMPRA --}}
-    <section id="guide" class="my-20">
+    <section id="guide" class="mb-10">
         <div class="container mx-auto">
             <div class="section-title p-2 text-primary space-y-3">
                 <h2 class="text-center text-xl">¿Quiéres realizar tu compra?</h2>

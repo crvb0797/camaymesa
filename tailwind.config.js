@@ -24,6 +24,7 @@ module.exports = {
                 'extra': '#190A07',
                 'text': '#4B5563',
                 'bg': '#E4C6B0',
+                'offer': '#4B5563',
                 'villatoro': '#FBB130',
             },
             spacing:{
