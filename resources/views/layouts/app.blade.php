@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    {{-- FAVICON --}}
+    <link rel="shortcut icon" href="{{ asset('./img/favicon_cama.png') }}" type="image/x-icon">
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
@@ -13,6 +16,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
@@ -23,6 +27,11 @@
     {{-- OWL --}}
     <link rel="stylesheet" href="{{ asset('owlcarousel/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('owlcarousel/owl.theme.default.min.css') }}">
+
+    {{-- CDN leafletjs --}}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
 
     {{-- JQUERY --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -81,8 +90,16 @@
     {{-- SWIPER --}}
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="{{ asset('./js/swiper.js') }}"></script>
+
     {{-- OWL SCRIPTS --}}
     <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
+
+    {{-- Script Leafleatjs --}}
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <script src="{{ asset('js/map.js') }}"></script>
 </body>
 
 </html>

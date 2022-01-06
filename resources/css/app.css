@@ -4,4 +4,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import 'social.css';
-@import 'swiper.css';
+
+.owl-theme .owl-dots .owl-dot.active span{
+    background-color: #923C1F !important;
+}
