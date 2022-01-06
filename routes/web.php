@@ -16,14 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
 
-Route::get('/camas', function () {
-    return "Aquí van las camas";
-})->name('beds');
-
-Route::get('/muebles', function () {
-    return "Aquí van los muebles";
-})->name('furniture');
-
 Route::get('/contacto', function () {
     return "Aquí el contacto";
 })->name('contact');

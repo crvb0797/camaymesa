@@ -3,26 +3,23 @@ $nav_links = [
     /* Link para el home */
     [
         'name' => 'Inicio',
-        'route' => route('home'),
-        'active' => request()->routeIs('home'),
+        'route' => route('home') . '#home',
+        /* 'active' => request()->routeIs('home') . '#home', */
     ],
     /* Link para el camas */
     [
         'name' => 'Camas',
-        'route' => route('beds'),
-        'active' => request()->routeIs('beds'),
+        'route' => url('http://camaymesa.test/#beds'),
     ],
     /* Link para el muebles */
     [
         'name' => 'Muebles',
-        'route' => route('furniture'),
-        'active' => request()->routeIs('furniture'),
+        'route' => url('http://camaymesa.test/#forniture'),
     ],
     /* Link para el contacto */
     [
         'name' => 'Contáctanos',
-        'route' => route('contact'),
-        'active' => request()->routeIs('contact'),
+        'route' => url('http://camaymesa.test/#contact'),
     ],
 ];
 @endphp
@@ -44,7 +41,7 @@ $nav_links = [
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
 
                     @foreach ($nav_links as $nav_link)
-                        <x-jet-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
+                        <x-jet-nav-link href="{{ $nav_link['route'] }}" {{-- :active="$nav_link['active']" --}}>
                             {{ $nav_link['name'] }}
                         </x-jet-nav-link>
                     @endforeach
@@ -107,8 +104,9 @@ $nav_links = [
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
 
-                                    <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                                    this.closest('form').submit();">
+                                    <x-jet-dropdown-link href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                                                                                                                                this.closest('form').submit();">
                                         {{ __('Log Out') }}
                                     </x-jet-dropdown-link>
                                 </form>
@@ -140,7 +138,7 @@ $nav_links = [
         <div class="pt-2 pb-3 space-y-1">
 
             @foreach ($nav_links as $nav_link)
-                <x-jet-responsive-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
+                <x-jet-responsive-nav-link href="{{ $nav_link['route'] }}" {{-- :active="$nav_link['active']" --}}>
                     {{ $nav_link['name'] }}
                 </x-jet-responsive-nav-link>
             @endforeach
@@ -183,8 +181,9 @@ $nav_links = [
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
 
-                        <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                this.closest('form').submit();">
+                        <x-jet-responsive-nav-link href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                                                                                                                                            this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </x-jet-responsive-nav-link>
                     </form>

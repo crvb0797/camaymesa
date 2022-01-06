@@ -2,7 +2,7 @@
     {{-- Sosial se encuentra en la plantilla --}}
 
     {{-- BANNER --}}
-    <div>
+    <div id="home">
         <div id="owl1" class="owl-carousel owl-theme overflow-hidden pt-16">
             {{-- @foreach ($promotions as $promotion)
                 <a href="{{ $promotion->link }}" target="_blank">

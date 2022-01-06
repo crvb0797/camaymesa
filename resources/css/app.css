@@ -5,6 +5,10 @@
 @import 'tailwindcss/utilities';
 @import 'social.css';
 
+html {
+    scroll-behavior: smooth;
+  }
+  
 .owl-theme .owl-dots .owl-dot.active span{
     background-color: #923C1F !important;
 }
