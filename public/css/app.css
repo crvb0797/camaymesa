@@ -1922,11 +1922,6 @@ select{
 	background-color: rgba(95, 79, 67, var(--tw-bg-opacity));
 }
 
-.bg-yellow-400{
-	--tw-bg-opacity: 1;
-	background-color: rgba(251, 191, 36, var(--tw-bg-opacity));
-}
-
 .bg-primary{
 	--tw-bg-opacity: 1;
 	background-color: rgba(146, 60, 31, var(--tw-bg-opacity));
@@ -2098,6 +2093,14 @@ select{
 
 .pt-8{
 	padding-top: 2rem;
+}
+
+.pt-12{
+	padding-top: 3rem;
+}
+
+.pt-20{
+	padding-top: 5rem;
 }
 
 .text-left{

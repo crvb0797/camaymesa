@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Inicio')
+@section('title', 'inicio')
 
 @section('content_header')
     <h1>Bienvenido administrador</h1>

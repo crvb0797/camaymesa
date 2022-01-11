@@ -73,4 +73,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Promotion::class);
     }
+
+    public function adminlte_image()
+    {
+        return auth()->user()->profile_photo_url;
+    }
+
+    public function adminlte_profile_url()
+    {
+        return route('profile.show');
+    }
 }
