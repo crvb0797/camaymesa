@@ -4,14 +4,15 @@
     {{-- BANNER --}}
     <div id="home" class="shadow-lg border-b">
         <div id="owl1" class="owl-carousel owl-theme overflow-hidden pt-16">
-            {{-- @foreach ($promotions as $promotion)
+            @foreach ($promotions as $promotion)
                 <a href="{{ $promotion->link }}" target="_blank">
-                    <img class="w-full object-cover object-center" src="{{ Storage::url($promotion->image->url) }}" alt="{{$promotion->name}}">
+                    <img class="w-full object-cover object-center" src="{{ Storage::url($promotion->image->url) }}"
+                        alt="{{ $promotion->name }}">
                 </a>
-            @endforeach --}}
-            <a href="#" target="_blank">
+            @endforeach
+            {{-- <a href="#" target="_blank">
                 <img class="w-full object-cover object-center" src="{{ asset('./img/banner2.png') }}">
-            </a>
+            </a> --}}
         </div>
     </div>
     {{-- /BANNER --}}
@@ -25,40 +26,43 @@
         {{-- CARROUSEL --}}
         <div style="container mx-auto">
             <div id="owl2" class="owl-carousel owl-theme marcas">
-                <div class="md:rounded-lg overflow-hidden">
-                    <img class="w-full" src="{{ asset('./img/producto.png') }}" />
-                    <div class="px-4 py-2 text-left space-y-4 ">
-                        <h1 class="text-xl text-text font-bold">Producto #1</h1>
-                        <span class="flex">
-                            <p class="text-text font-bold mr-4">Ancho:</p>15cm x 20cm
-                        </span>
+                @foreach ($offers as $offer)
+                    <div class="md:rounded-lg overflow-hidden">
+                        <img class="w-full" src="{{-- {{ Storage::url($offer->image->url) }} --}} {{ asset('./img/producto.png') }}" />
+                        <div class="px-4 py-2 text-left space-y-4 ">
+                            <h1 class="text-xl text-text font-bold">{{ $offer->name }}</h1>
+                            <span class="flex">
+                                <p class="text-text font-bold mr-4">Ancho:</p>{{ $offer->width }}
+                            </span>
 
-                        <span class="flex">
-                            <p class="text-text font-bold mr-4">Largo:</p>15cm x 20cm
-                        </span>
+                            <span class="flex">
+                                <p class="text-text font-bold mr-4">Largo:</p>{{ $offer->long }}
+                            </span>
 
-                        <span class="flex">
-                            <p class="text-text font-bold mr-4">Alto:</p>15cm x 20cm
-                        </span>
+                            <span class="flex">
+                                <p class="text-text font-bold mr-4">Alto:</p>{{ $offer->high }}
+                            </span>
 
-                        <span class="flex">
-                            <p class="text-text font-bold mr-4">Garantia:</p>3 años por desperfecto
-                        </span>
+                            <span class="flex">
+                                <p class="text-text font-bold mr-4">Garantia:</p>{{ $offer->warranty }}
+                            </span>
 
-                        <hr />
+                            <hr />
 
-                        <div class="flex space-x-4">
-                            <p class="text-offer line-through">Precio normal Q10,850</p>
-                            <span class="text-primary font-bold">Oferta Q10,000</span>
+                            <div class="flex space-x-4">
+                                <p class="text-offer line-through">Precio normal Q{{ $offer->price }}</p>
+                                <span class="text-primary font-bold">Oferta Q{{ $offer->offer }}</span>
+                            </div>
+
+                            <a href="{{ $offer->link }}" target="_blank"
+                                class="mt-12 w-full text-center bg-secondary py-2 rounded-lg text-white block"><i
+                                    class="fas fa-plus-circle mr-2"></i> Más
+                                información</a>
                         </div>
-
-                        <button class="mt-12 w-full text-center bg-secondary py-2 rounded-lg text-white"><i
-                                class="fas fa-plus-circle mr-2"></i> Más
-                            información</button>
                     </div>
-                </div>
+                @endforeach
 
-                <div class="md:rounded-lg overflow-hidden">
+                {{-- <div class="md:rounded-lg overflow-hidden">
                     <img class="w-full" src="{{ asset('./img/producto.png') }}" />
                     <div class="px-4 py-2 text-left space-y-4 ">
                         <h1 class="text-xl text-text font-bold">Producto #2</h1>
@@ -155,7 +159,7 @@
                                 class="fas fa-plus-circle mr-2"></i> Más
                             información</button>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>
@@ -213,39 +217,42 @@
 
         {{-- Contenedor de camas --}}
         <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 space-y-4 sm:space-y-0 container mx-auto">
-            <div class="md:rounded-lg overflow-hidden">
-                <img class=" w-full" src="{{ asset('./img/cama.png') }}" />
-                <div class="px-4 py-2 text-left space-y-4 ">
-                    <h1 class="text-xl text-text font-bold">Producto #1</h1>
-                    <span class="flex">
-                        <p class="text-text font-bold mr-4">Ancho:</p>15cm x 20cm
-                    </span>
+            @foreach ($beds as $bed)
+                <div class="md:rounded-lg overflow-hidden">
+                    <img class=" w-full" src="{{ asset('./img/cama.png') }}" />
+                    <div class="px-4 py-2 text-left space-y-4 ">
+                        <h1 class="text-xl text-text font-bold">{{ $bed->name }}</h1>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Ancho:</p>{{ $bed->width }}
+                        </span>
 
-                    <span class="flex">
-                        <p class="text-text font-bold mr-4">Largo:</p>15cm x 20cm
-                    </span>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Largo:</p>{{ $bed->long }}
+                        </span>
 
-                    <span class="flex">
-                        <p class="text-text font-bold mr-4">Alto:</p>15cm x 20cm
-                    </span>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Alto:</p>{{ $bed->high }}
+                        </span>
 
-                    <span class="flex">
-                        <p class="text-text font-bold mr-4">Garantia:</p>3 años por desperfecto
-                    </span>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Garantia:</p>{{ $bed->warranty }}
+                        </span>
 
-                    <hr />
+                        <hr />
 
-                    <div class="flex space-x-4">
-                        <span class="text-primary font-bold">Precio Q10,000</span>
+                        <div class="flex space-x-4">
+                            <span class="text-primary font-bold">Precio Q{{ $bed->price }}</span>
+                        </div>
+
+                        <a href="{{ $bed->link }}" target="_blank"
+                            class="mt-12 w-full block text-center bg-secondary py-2 rounded-lg text-white"><i
+                                class="fas fa-plus-circle mr-2"></i> Más
+                            información</a>
                     </div>
-
-                    <button class="mt-12 w-full text-center bg-secondary py-2 rounded-lg text-white"><i
-                            class="fas fa-plus-circle mr-2"></i> Más
-                        información</button>
                 </div>
-            </div>
+            @endforeach
 
-            <div class="md:rounded-lg overflow-hidden">
+            {{-- <div class="md:rounded-lg overflow-hidden">
                 <img class="w-full" src="{{ asset('./img/cama.png') }}" />
                 <div class="px-4 py-2 text-left space-y-4 ">
                     <h1 class="text-xl text-text font-bold">Producto #2</h1>
@@ -307,7 +314,7 @@
                             class="fas fa-plus-circle mr-2"></i> Más
                         información</button>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </section>
@@ -322,39 +329,42 @@
 
         {{-- Contenedor de muebles --}}
         <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 space-y-4 sm:space-y-0 container mx-auto">
-            <div class="md:rounded-lg overflow-hidden">
-                <img class="w-full" src="{{ asset('./img/mueble.png') }}" />
-                <div class="px-4 py-2 text-left space-y-4 ">
-                    <h1 class="text-xl text-text font-bold">Producto #1</h1>
-                    <span class="flex">
-                        <p class="text-text font-bold mr-4">Ancho:</p>15cm x 20cm
-                    </span>
+            @foreach ($furniture as $item)
+                <div class="md:rounded-lg overflow-hidden">
+                    <img class=" w-full" src="{{ asset('./img/cama.png') }}" />
+                    <div class="px-4 py-2 text-left space-y-4 ">
+                        <h1 class="text-xl text-text font-bold">{{ $item->name }}</h1>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Ancho:</p>{{ $item->width }}
+                        </span>
 
-                    <span class="flex">
-                        <p class="text-text font-bold mr-4">Largo:</p>15cm x 20cm
-                    </span>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Largo:</p>{{ $item->long }}
+                        </span>
 
-                    <span class="flex">
-                        <p class="text-text font-bold mr-4">Alto:</p>15cm x 20cm
-                    </span>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Alto:</p>{{ $item->high }}
+                        </span>
 
-                    <span class="flex">
-                        <p class="text-text font-bold mr-4">Garantia:</p>3 años por desperfecto
-                    </span>
+                        <span class="flex">
+                            <p class="text-text font-bold mr-4">Garantia:</p>{{ $item->warranty }}
+                        </span>
 
-                    <hr />
+                        <hr />
 
-                    <div class="flex space-x-4">
-                        <span class="text-primary font-bold">Precio Q10,000</span>
+                        <div class="flex space-x-4">
+                            <span class="text-primary font-bold">Precio Q{{ $item->price }}</span>
+                        </div>
+
+                        <a href="{{ $item->link }}" target="_blank"
+                            class="mt-12 w-full block text-center bg-secondary py-2 rounded-lg text-white"><i
+                                class="fas fa-plus-circle mr-2"></i> Más
+                            información</a>
                     </div>
-
-                    <button class="mt-12 w-full text-center bg-secondary py-2 rounded-lg text-white"><i
-                            class="fas fa-plus-circle mr-2"></i> Más
-                        información</button>
                 </div>
-            </div>
+            @endforeach
 
-            <div class="md:rounded-lg overflow-hidden">
+            {{-- <div class="md:rounded-lg overflow-hidden">
                 <img class="w-full" src="{{ asset('./img/mueble.png') }}" />
                 <div class="px-4 py-2 text-left space-y-4 ">
                     <h1 class="text-xl text-text font-bold">Producto #2</h1>
@@ -416,7 +426,7 @@
                             class="fas fa-plus-circle mr-2"></i> Más
                         información</button>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
 

@@ -85,8 +85,12 @@ $nav_links = [
                             <x-slot name="content">
                                 <!-- Account Management -->
                                 <div class="block px-4 py-2 text-xs text-gray-400">
-                                    {{ __('Manage Account') }}
+                                    {{ __('Opciones del perfil') }}
                                 </div>
+
+                                <x-jet-dropdown-link href="{{ route('admin.home') }}">
+                                    {{ __('Administrador') }}
+                                </x-jet-dropdown-link>
 
                                 <x-jet-dropdown-link href="{{ route('profile.show') }}">
                                     {{ __('Profile') }}
@@ -106,7 +110,7 @@ $nav_links = [
 
                                     <x-jet-dropdown-link href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                                                                                                                this.closest('form').submit();">
+                                                                                                                                                                                        this.closest('form').submit();">
                                         {{ __('Log Out') }}
                                     </x-jet-dropdown-link>
                                 </form>
@@ -164,6 +168,10 @@ $nav_links = [
                 </div>
 
                 <div class="mt-3 space-y-1">
+                    <x-jet-responsive-nav-link href="{{ route('admin.home') }}"
+                        :active="request()->routeIs('admin.home')">
+                        {{ __('Administrador') }}
+                    </x-jet-responsive-nav-link>
                     <!-- Account Management -->
                     <x-jet-responsive-nav-link href="{{ route('profile.show') }}"
                         :active="request()->routeIs('profile.show')">
@@ -183,7 +191,7 @@ $nav_links = [
 
                         <x-jet-responsive-nav-link href="{{ route('logout') }}"
                             onclick="event.preventDefault();
-                                                                                                                                                            this.closest('form').submit();">
+                                                                                                                                                                    this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </x-jet-responsive-nav-link>
                     </form>

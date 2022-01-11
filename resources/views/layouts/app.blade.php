@@ -85,7 +85,7 @@
                             href="https://villatoro.dev" target="_blank" class="text-villatoro">Carlos Villatoro</a></p>
 
                     <a class="bg-primary text-white p-3 text-sm rounded-lg md:flex items-center hover:bg-opacity-60 hidden"
-                        href="{{ route('admin') }}"><i class="fas fa-user-tie mr-2"></i>
+                        href="{{ route('admin.home') }}"><i class="fas fa-user-tie mr-2"></i>
                         Administrador</a>
                 </div>
             </footer>

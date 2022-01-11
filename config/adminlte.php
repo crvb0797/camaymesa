@@ -231,11 +231,16 @@ return [
         ],
 
         // Sidebar items:
+        [
+            'text' => 'Dashboaard',
+            'route'  => 'admin.home',
+            'icon' => 'fas fa-fw fa-chart-bar',
+        ],
         ['header' => 'OPCIONES DE ADMINISTRADOR'],
         [
-            'text' => 'Categorías',
+            'text' => 'Productos',
             'url'  => '#',
-            'icon' => 'fas fa-fw fa-tags',
+            'icon' => 'fas fa-fw fa-shopping-cart',
         ],
         [
             'text' => 'change_password',
