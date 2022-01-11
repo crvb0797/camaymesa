@@ -17,9 +17,12 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
+
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
+    {{-- JQUERY --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -33,8 +36,7 @@
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
 
-    {{-- JQUERY --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
     @livewireStyles
 
@@ -64,18 +66,26 @@
         @livewire('navigation-menu')
 
         <!-- Page Content -->
-        <main>
+        <main class="overflow-hidden">
             {{ $slot }}
 
+            <a href="https://m.me/CarlosVillatoro" class="float" target="_blank">
+                <img src="https://www.peengler.com/wp-content/uploads/messenger.png" alt="Messenger" />
+            </a>
+
             {{-- FOOTER --}}
-            <footer class="bg-secondary text-white">
-                <div class=" flex justify-between items-center p-12 text-center md:text-left">
+            <footer class="bg-secondary text-white p-12">
+                <div class="flex items-center justify-center md:hidden mb-4">
+                    <a class="text-white font-bold text-2xl" href="{{ route('home') }}">
+                        LOGO
+                    </a>
+                </div>
+                <div class=" flex justify-between items-center text-center md:text-left">
                     <p>2021 camaymesa.online todos los derechos reservados, desarrollada por <a
                             href="https://villatoro.dev" target="_blank" class="text-villatoro">Carlos Villatoro</a></p>
 
-                    <a class="bg-primary text-white p-3 rounded-lg text-lg md:flex items-center hover:bg-opacity-60 hidden"
-                        href="{{ route('admin') }}"><img src="{{ asset('./img/admin.svg') }}"
-                            class="mr-2">
+                    <a class="bg-primary text-white p-3 text-sm rounded-lg md:flex items-center hover:bg-opacity-60 hidden"
+                        href="{{ route('admin') }}"><i class="fas fa-user-tie mr-2"></i>
                         Administrador</a>
                 </div>
             </footer>
@@ -93,6 +103,16 @@
 
     {{-- OWL SCRIPTS --}}
     <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
+
+    {{-- AOS --}}
+    <link rel="stylesheet" href="{{ asset('./vendor/aos-master/dist/aos.css') }}">
+    <script src="{{ asset('./vendor/aos-master/dist/aos.js') }}"></script>
+    {{-- AOS --}}
+    <script>
+        AOS.init({
+
+        });
+    </script>
 
     {{-- Script Leafleatjs --}}
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"

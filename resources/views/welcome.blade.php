@@ -24,7 +24,7 @@
         </div>
         {{-- CARROUSEL --}}
         <div style="container mx-auto">
-            <div id="owl2" class="owl-carousel owl-theme">
+            <div id="owl2" class="owl-carousel owl-theme marcas">
                 <div class="md:rounded-lg overflow-hidden">
                     <img class="w-full" src="{{ asset('./img/producto.png') }}" />
                     <div class="px-4 py-2 text-left space-y-4 ">
@@ -214,7 +214,7 @@
         {{-- Contenedor de camas --}}
         <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 space-y-4 sm:space-y-0 container mx-auto">
             <div class="md:rounded-lg overflow-hidden">
-                <img class="w-full" src="{{ asset('./img/cama.png') }}" />
+                <img class=" w-full" src="{{ asset('./img/cama.png') }}" />
                 <div class="px-4 py-2 text-left space-y-4 ">
                     <h1 class="text-xl text-text font-bold">Producto #1</h1>
                     <span class="flex">
@@ -424,14 +424,126 @@
     {{-- MUEBLES --}}
 
     {{-- CONTACTO --}}
-    <section id="contact">
+    <section id="contact" class="container mx-auto">
+        <div class="section-title p-2 text-primary mt-8 space-y-2 mb-4">
+            <h2 class="text-center text-xl">¿Necetsitas ayuda?</h2>
+            <h1 class="text-center text-3xl font-extrabold tracking-wide uppercase">Contáctanos</h1>
+        </div>
 
+
+        <div id="contact"
+            class="container mx-auto p-6 grid grid-cols-1 md:grid-cols-2 text-text bg-secondary rounded-lg relative">
+            <div class="absolute inset-0 z-0 hidden md:block">
+                <img class="rotate-180" src="{{ asset('./img/moon.svg') }}" alt="">
+            </div>
+            {{-- Información de contacto --}}
+            <div class="text-white p-6 md:pl-24 z-40">
+                <div class="mb-16">
+                    <h1 class="font-bold text-3xl">Información de contacto</h1>
+                    <ul class="my-6 text-xl space-y-6">
+                        <li><i class="fas fa-phone mr-2"></i> +(502) 5598 - 0230</li>
+                        <li><i class="fas fa-envelope mr-2"></i> camaymesa@gmail.com</li>
+                        <li><i class="far fa-map mr-2"></i> 4ta Ave 8-40 zona 9, Guatemala</li>
+                    </ul>
+                </div>
+
+                <div class="my-12">
+                    <h1 class="font-bold text-3xl">Sigueme en</h1>
+                    <div class="w-60 pt-6 flex space-x-8">
+                        <a href="#" target="_blank"><i class="text-3xl fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="text-3xl fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="text-3xl fab fa-waze"></i></a>
+                    </div>
+                </div>
+            </div>
+            {{-- /Información de contacto --}}
+
+            {{-- Formulario de contacto --}}
+            <div class="bg-white rounded-xl p-6  z-20">
+                <form method="POST" action="{{-- {{ route('contact_me') }} --}}" class="text-text space-y-6">
+                    @csrf
+                    <div class="w-full space-y-2">
+                        <label class="text-xl font-bold">Nombre</label>
+                        <input name="name" class="w-full rounded-xl" type="text" placeholder="Nombre completo">
+
+                        @error('name')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="w-full space-y-2">
+                            <label class="text-xl font-bold">Número de teléfono</label>
+                            <input name="phone" class="w-full rounded-xl" type="text" placeholder="5555 - 5555">
+                        </div>
+                        <div class="w-full space-y-2">
+                            <label class="text-xl font-bold">Correo eléctronico</label>
+                            <input name="email" class="w-full rounded-xl" type="text" placeholder="ejemplo@mail.com">
+
+                            @error('email')
+                                <span class="text-red-500 text-sm">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="w-full space-y-2">
+                        <label class="text-xl font-bold">Mensaje</label>
+                        <textarea name="msg" class="w-full rounded-xl" name="" id="" cols="30" rows="10"
+                            placeholder="Escribenos tus dudas..."></textarea>
+
+                        @error('msg')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <button type="submit" class="bg-primary py-2 px-2 text-white rounded-lg float-right"><i
+                            class="fas fa-paper-plane mr-2"></i> Enviar mensaje</button>
+                </form>
+            </div>
+            {{-- /Formulario de contacto --}}
+        </div>
     </section>
     {{-- CONTACTO --}}
 
     {{-- MARCAS --}}
-    <section>
-
+    <section class="container mx-auto">
+        <div class="section-title p-2 text-primary mt-8 space-y-2 mb-4">
+            <h2 class="text-center text-xl">Nuestras</h2>
+            <h1 class="text-center text-3xl font-extrabold tracking-wide uppercase">Marcas</h1>
+        </div>
+        {{-- CARROUSEL --}}
+        <div id="owl3" class="owl-carousel owl-theme marcas">
+            <div
+                class="w-60 h-auto rounded-lg shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
+                <div class="">
+                    <img class="w-full" src="{{ asset('./img/marca_1.png') }}" alt="Imagen de relleno">
+                </div>
+            </div>
+            <div
+                class="w-60 h-auto rounded-lg shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
+                <div class="">
+                    <img class="w-full" src="{{ asset('./img/marca_1.png') }}" alt="Imagen de relleno">
+                </div>
+            </div>
+            <div
+                class="w-60 h-auto rounded-lg shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
+                <div class="">
+                    <img class="w-full" src="{{ asset('./img/marca_2.png') }}" alt="Imagen de relleno">
+                </div>
+            </div>
+            <div
+                class="w-60 h-auto rounded-lg shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
+                <div class="">
+                    <img class="w-full" src="{{ asset('./img/marca_3.png') }}" alt="Imagen de relleno">
+                </div>
+            </div>
+            <div
+                class="w-60 h-auto rounded-lg shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
+                <div class="">
+                    <img class="w-full" src="{{ asset('./img/marca_4.png') }}" alt="Imagen de relleno">
+                </div>
+            </div>
+        </div>
     </section>
     {{-- MARCAS --}}
 

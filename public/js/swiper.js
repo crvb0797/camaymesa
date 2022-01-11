@@ -46,7 +46,6 @@
         dots: true,
         loop: true,
         margin: 50,
-        /* center: true, */
         autoplay: true,
         autoplayTimeout: 10000,
         autoplayHoverPause: true,
@@ -62,4 +61,30 @@
             }
         },
     });
+
+    $("#owl3").owlCarousel({
+      dots: true,
+      autoplay: true,
+      autoplayTimeout: 10000,
+      autoplayHoverPause: true,
+      loop:true,
+      navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+      margin:10,
+      responsiveClass:true,
+      responsive:{
+          0:{
+              items:1,
+              nav: false,
+          },
+          600:{
+              items:2,
+              nav:true,
+          },
+          1000:{
+              items:3,
+              nav:true,
+          }
+      }
+     
+  });
 });
