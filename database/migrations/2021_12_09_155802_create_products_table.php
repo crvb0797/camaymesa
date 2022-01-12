@@ -19,13 +19,13 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->enum('status', [Product::BORRADOR, Product::PUBLICADO])->default(Product::BORRADOR);
-            $table->String('price');
+            $table->String('price')->nullable();
             $table->String('offer')->nullable();
             $table->string('width')->nullable();
             $table->string('long')->nullable();
             $table->string('high')->nullable();
             $table->string('warranty')->nullable();
-            $table->string('link');
+            $table->string('link')->nullable();
 
             /* LLAVES FORANEAS */
             $table->unsignedBigInteger('user_id')->nullable();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRquest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -36,9 +37,11 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRquest $request)
     {
-        //
+        Product::create($request->all());
+
+        return redirect()->route('admin.products.create');
     }
 
     /**
@@ -59,7 +62,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductRquest $request, Product $product)
     {
         //
     }
