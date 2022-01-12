@@ -28,7 +28,8 @@
             <div id="owl2" class="owl-carousel owl-theme marcas">
                 @foreach ($offers as $offer)
                     <div class="md:rounded-lg overflow-hidden">
-                        <img class="w-full" src="{{-- {{ Storage::url($offer->image->url) }} --}} {{ asset('./img/producto.png') }}" />
+                        <img class="w-full"
+                            src="{{ Storage::url($offer->image->url) }} {{-- {{ asset('./img/producto.png') }} --}}" />
                         <div class="px-4 py-2 text-left space-y-4 ">
                             <h1 class="text-xl text-text font-bold">{{ $offer->name }}</h1>
                             <span class="flex">

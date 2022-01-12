@@ -239,7 +239,7 @@ return [
         ['header' => 'OPCIONES DE ADMINISTRADOR'],
         [
             'text' => 'Productos',
-            'url'  => '#',
+            'route'  => 'admin.products.index',
             'icon' => 'fas fa-fw fa-shopping-cart',
         ],
         [
