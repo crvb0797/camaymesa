@@ -60,7 +60,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.products.edit', compact('product'));
+        $categories = Category::pluck('name', 'id');
+        return view('admin.products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -72,7 +73,24 @@ class ProductController extends Controller
      */
     public function update(ProductRquest $request, Product $product)
     {
-        //
+        $product->update($request->all());
+
+        if ($request->file('file')) {
+            $url = Storage::put('products', $request->file('file'));
+
+            if ($product->image) {
+                Storage::delete($product->image->url);
+                $product->image->update([
+                    'url' => $url,
+                ]);
+            } else {
+                $product->image()->create([
+                    'url' => $url,
+                ]);
+            }
+        }
+
+        return redirect()->route('admin.products.edit', $product)->with('info', 'El producto se actualizó con éxito ✍🏻');
     }
 
     /**

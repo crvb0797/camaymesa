@@ -23,12 +23,18 @@ class ProductRquest extends FormRequest
      */
     public function rules()
     {
+        $product = $this->route()->parameter('product');
+
         $rules = [
             'name' => 'required',
             'slug' => 'required|unique:products',
             'status' => 'required|in:1,2',
             'file' => 'image',
         ];
+
+        if ($product) {
+            $rules['slug'] = 'required|unique:products,slug,' . $product->id;
+        }
 
         if ($this->status == 2) {
             $rules = array_merge($rules, [

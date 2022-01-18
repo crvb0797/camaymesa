@@ -38,7 +38,7 @@
                             </td>
                             <td class="text-muted">{{ $product->category->name }}</td>
                             <td class="text-muted"><img class="img-thumbnail" width="100px"
-                                    src="{{ Storage::url($product->image->url) }}" alt=""></td>
+                                    src="@if ($product->image) {{ Storage::url($product->image->url) }} @else {{ asset('img/noimage.png') }} @endif" alt="{{ $product->name }}"></td>
                             <td width="120px">
                                 <a class="btn btn-primary btn-sm" href="{{ route('admin.products.edit', $product) }}">
                                     <i class="fas fa-edit mr-2"></i> Editar
