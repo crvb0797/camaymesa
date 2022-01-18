@@ -28,8 +28,8 @@
             <div id="owl2" class="owl-carousel owl-theme marcas">
                 @foreach ($offers as $offer)
                     <div class="md:rounded-lg overflow-hidden">
-                        <img class="w-full"
-                            src="{{ Storage::url($offer->image->url) }} {{-- {{ asset('./img/producto.png') }} --}}" />
+                        <img class="w-full" src="@if ($offer->image) {{ Storage::url($offer->image->url) }} @else {{ asset('img/noimage.png') }} @endif" />
+
                         <div class="px-4 py-2 text-left space-y-4 ">
                             <h1 class="text-xl text-text font-bold">{{ $offer->name }}</h1>
                             <span class="flex">
@@ -220,7 +220,7 @@
         <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 space-y-4 sm:space-y-0 container mx-auto">
             @foreach ($beds as $bed)
                 <div class="md:rounded-lg overflow-hidden">
-                    <img class=" w-full" src="{{ asset('./img/cama.png') }}" />
+                    <img class="w-full" src="@if ($bed->image) {{ Storage::url($bed->image->url) }} @else {{ asset('img/noimage.png') }} @endif" />
                     <div class="px-4 py-2 text-left space-y-4 ">
                         <h1 class="text-xl text-text font-bold">{{ $bed->name }}</h1>
                         <span class="flex">
@@ -332,7 +332,8 @@
         <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 space-y-4 sm:space-y-0 container mx-auto">
             @foreach ($furniture as $item)
                 <div class="md:rounded-lg overflow-hidden">
-                    <img class=" w-full" src="{{ asset('./img/cama.png') }}" />
+                    <img class="w-full" src="@if ($item->image) {{ Storage::url($item->image->url) }} @else {{ asset('img/noimage.png') }} @endif" />
+
                     <div class="px-4 py-2 text-left space-y-4 ">
                         <h1 class="text-xl text-text font-bold">{{ $item->name }}</h1>
                         <span class="flex">

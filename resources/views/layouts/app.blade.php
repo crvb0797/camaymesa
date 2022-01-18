@@ -31,6 +31,9 @@
     <link rel="stylesheet" href="{{ asset('owlcarousel/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('owlcarousel/owl.theme.default.min.css') }}">
 
+    {{-- TOASTR.JS --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
     {{-- CDN leafletjs --}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -104,14 +107,19 @@
     {{-- OWL SCRIPTS --}}
     <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
 
-    {{-- AOS --}}
-    <link rel="stylesheet" href="{{ asset('./vendor/aos-master/dist/aos.css') }}">
-    <script src="{{ asset('./vendor/aos-master/dist/aos.js') }}"></script>
-    {{-- AOS --}}
+    {{-- TOASTR.JS --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script>
-        AOS.init({
-
-        });
+        @if (Session::has('info'))
+            toastr.options =
+            {
+            "closeButton" : true,
+            "progressBar" : true,
+            "positionClass": "toast-top-right",
+            }
+            toastr.success("{{ session('info') }}");
+        
+        @endif
     </script>
 
     {{-- Script Leafleatjs --}}

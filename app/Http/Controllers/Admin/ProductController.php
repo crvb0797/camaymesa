@@ -7,6 +7,7 @@ use App\Http\Requests\ProductRquest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -39,9 +40,16 @@ class ProductController extends Controller
      */
     public function store(ProductRquest $request)
     {
-        Product::create($request->all());
+        /* Storage::put('products', $request->file('file')); */
+        $product = Product::create($request->all());
+        if ($request->file('file')) {
+            $url = Storage::put('products', $request->file('file'));
+            $product->image()->create([
+                'url' => $url,
+            ]);
+        }
 
-        return redirect()->route('admin.products.create');
+        return redirect()->route('admin.products.create')->with('info', 'El producto se creo con éxito 👍🏻');
     }
 
     /**
