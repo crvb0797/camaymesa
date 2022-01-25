@@ -1,19 +1,19 @@
 @extends('adminlte::page')
 
-@section('title', 'inicio')
+@section('title', 'listado de promociones')
 
 @section('content_header')
-    <h1>Editar producto: <span class="text-muted">{{ $product->name }}</span></h1>
+    <h1>Creación de promociones (Banner)</h1>
 @stop
 
 @section('content')
     <div class="card">
         <div class="card-body">
-            {!! Form::model($product, ['route' => ['admin.products.update', $product], 'autocomplete' => 'off', 'files' => 'true', 'method' => 'PUT']) !!}
+            {!! Form::open(['route' => 'admin.promotions.store', 'autocomplete' => 'off', 'files' => 'true']) !!}
 
-            @include('admin.products.partials.form')
+            @include('admin.promotions.partials.form')
 
-            {!! Form::submit('Actualizar producto', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit('Crear promoción', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>
@@ -47,34 +47,6 @@
 @stop
 
 @section('js')
-    {{-- StringToSlug --}}
-    <script src="{{ asset('./vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $("#name").stringToSlug({
-                setEvents: 'keyup keydown blur',
-                getPut: '#slug',
-                space: '-'
-            });
-        });
-    </script>
-
-    {{-- Ofertas --}}
-    <script>
-        $(function() {
-            $('#category_id').on('change', onOffer);
-        });
-
-        function onOffer() {
-            var category = $(this).val();
-            if (category == 1) {
-                $('#offer_price').attr('hidden', false)
-            } else {
-                $('#offer_price').attr('hidden', true)
-            }
-        }
-    </script>
-
     {{-- Vista previa imagen --}}
     <script>
         document.getElementById('file').addEventListener('change', changeImage);

@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'listado de productos')
+@section('title', 'listado de promociones')
 
 @section('content_header')
-    <h1>Listado de productos</h1>
+    <h1>Listado de promociones (Banner)</h1>
 @stop
 
 @section('content')
-    @livewire('admin.product-index')
+    @livewire('admin.promotion-index')
 @stop
 
 @section('css')

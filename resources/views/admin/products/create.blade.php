@@ -11,8 +11,6 @@
         <div class="card-body">
             {!! Form::open(['route' => 'admin.products.store', 'autocomplete' => 'off', 'files' => 'true']) !!}
 
-            {!! Form::hidden('user_id', auth()->user()->id) !!}
-
             @include('admin.products.partials.form')
 
             {!! Form::submit('Crear producto', ['class' => 'btn btn-primary']) !!}

@@ -6,7 +6,7 @@
         <div id="owl1" class="owl-carousel owl-theme overflow-hidden pt-16">
             @foreach ($promotions as $promotion)
                 <a href="{{ $promotion->link }}" target="_blank">
-                    <img class="w-full object-cover object-center" src="{{ Storage::url($promotion->image->url) }}"
+                    <img class="w-full object-cover object-center" src="@if ($promotion->image) {{ Storage::url($promotion->image->url) }} @else {{ asset('img/banner_no_image.jpg') }} @endif"
                         alt="{{ $promotion->name }}">
                 </a>
             @endforeach
