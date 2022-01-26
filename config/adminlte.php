@@ -248,6 +248,11 @@ return [
             'route'  => 'admin.promotions.index',
             'icon' => 'fas fa-fw fa-ad',
         ],
+        [
+            'text' => 'Marcas',
+            'route'  => 'admin.trademarks.index',
+            'icon' => 'fas fa-fw fa-registered',
+        ],
     ],
 
     /*

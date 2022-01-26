@@ -9,6 +9,12 @@ class Trademark extends Model
 {
     use HasFactory;
 
+    protected $guarded = [
+        'id',
+        'created_at',
+        'update_at'
+    ];
+
     /* INVERSE RELATIONSHIP 1:N  */
 
     public function user()

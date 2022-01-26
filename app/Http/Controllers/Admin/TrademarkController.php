@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Promotion;
+use App\Models\Trademark;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class PromotionController extends Controller
+class TrademarkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class PromotionController extends Controller
      */
     public function index()
     {
-        return view('admin.promotions.index');
+        return view('admin.trademarks.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class PromotionController extends Controller
      */
     public function create()
     {
-        return view('admin.promotions.create');
+        return view('admin.trademarks.create');
     }
 
     /**
@@ -39,19 +39,17 @@ class PromotionController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'link' => 'required'
         ]);
-        $promotion = Promotion::create($request->all());
+        $trademark = Trademark::create($request->all());
         if ($request->file('file')) {
-            $url = Storage::put('promotions', $request->file('file'));
-            $promotion->image()->create([
+            $url = Storage::put('trademarks', $request->file('file'));
+            $trademark->image()->create([
                 'url' => $url,
             ]);
         }
 
 
-
-        return redirect()->route('admin.promotions.create')->with('info', 'La promoción se creo con éxito 👍🏻');
+        return redirect()->route('admin.trademarks.create')->with('info', 'La marca se creo con éxito 👍🏻');
     }
 
     /**
@@ -60,7 +58,7 @@ class PromotionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Promotion $promotion)
+    public function show(Trademark $trademark)
     {
         //
     }
@@ -71,9 +69,9 @@ class PromotionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Promotion $promotion)
+    public function edit(Trademark $trademark)
     {
-        return view('admin.promotions.edit', compact('promotion'));
+        return view('admin.trademarks.edit', compact('trademark'));
     }
 
     /**
@@ -83,30 +81,30 @@ class PromotionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Promotion $promotion)
+    public function update(Request $request, Trademark $trademark)
     {
         $request->validate([
             'name' => 'required',
-            'link' => 'required'
         ]);
-        $promotion->update($request->all());
-        if ($request->file('file')) {
-            $url = Storage::put('promotions', $request->file('file'));
 
-            if ($promotion->image) {
-                Storage::delete($promotion->image->url);
-                $promotion->image->update([
+        $trademark->update($request->all());
+
+        if ($request->file('file')) {
+            $url = Storage::put('$trademarks', $request->file('file'));
+
+            if ($trademark->image) {
+                Storage::delete($trademark->image->url);
+                $trademark->image->update([
                     'url' => $url,
                 ]);
             } else {
-                $promotion->image()->create([
+                $trademark->image()->create([
                     'url' => $url,
                 ]);
             }
         }
 
-
-        return redirect()->route('admin.promotions.edit', $promotion)->with('info', 'La promoción se actualizó con éxito ✍🏻');
+        return redirect()->route('admin.trademarks.edit', $trademark)->with('info', 'La marca se actualizó con éxito ✍🏻');
     }
 
     /**
@@ -115,9 +113,9 @@ class PromotionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Promotion $promotion)
+    public function destroy(Trademark $trademark)
     {
-        $promotion->delete();
-        return redirect()->route('admin.promotions.index')->with('info', 'La promoción se eliminó con éxito 🧨');
+        $trademark->delete();
+        return redirect()->route('admin.trademarks.index')->with('info', 'La marca se eliminó con éxito 🧨');
     }
 }

@@ -525,36 +525,14 @@
         </div>
         {{-- CARROUSEL --}}
         <div id="owl3" class="owl-carousel owl-theme marcas">
-            <div
-                class="w-60 h-auto rounded-lg shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
-                <div class="">
-                    <img class="w-full" src="{{ asset('./img/marca_1.png') }}" alt="Imagen de relleno">
+            @foreach ($trademarks as $trademark)
+                <div
+                    class="w-60 h-auto rounded-lg overflow-hidden shadow-lg hover:shadow-lg transform transition duration-500 hover:scale-105">
+                    <div class="">
+                        <img class="w-full" src="@if ($trademark->image) {{ Storage::url($trademark->image->url) }} @else {{ asset('img/marca_no_image.jpg') }} @endif" alt="{{ $trademark->name }}">
+                    </div>
                 </div>
-            </div>
-            <div
-                class="w-60 h-auto rounded-lg shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
-                <div class="">
-                    <img class="w-full" src="{{ asset('./img/marca_1.png') }}" alt="Imagen de relleno">
-                </div>
-            </div>
-            <div
-                class="w-60 h-auto rounded-lg shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
-                <div class="">
-                    <img class="w-full" src="{{ asset('./img/marca_2.png') }}" alt="Imagen de relleno">
-                </div>
-            </div>
-            <div
-                class="w-60 h-auto rounded-lg shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
-                <div class="">
-                    <img class="w-full" src="{{ asset('./img/marca_3.png') }}" alt="Imagen de relleno">
-                </div>
-            </div>
-            <div
-                class="w-60 h-auto rounded-lg shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
-                <div class="">
-                    <img class="w-full" src="{{ asset('./img/marca_4.png') }}" alt="Imagen de relleno">
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
     {{-- MARCAS --}}
